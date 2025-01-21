@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jadwal Konten Jurnalistik</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f0f2f5;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #6366f1, #a855f7);
+            padding: 40px 20px;
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header p {
+            opacity: 0.9;
+        }
+
+        .week-container {
+            background: white;
+            border-radius: 16px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .week-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .week-title {
+            color: #1e293b;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .week-title i {
+            color: #6366f1;
+        }
+
+        .content-item {
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 12px;
+            background: #f8fafc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid #e2e8f0;
+        }
+
+        .content-item:hover {
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transform: translateX(10px);
+        }
+
+        .content-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .content-icon {
+            width: 40px;
+            height: 40px;
+            background: #6366f1;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .date {
+            color: #6366f1;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin-bottom: 5px;
+        }
+
+        .title {
+            color: #1e293b;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #e2e8f0;
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: 500;
+            background: #dbeafe;
+            color: #2563eb;
+            margin-left: 10px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .header {
+                padding: 30px 15px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .content-item {
+                padding: 15px;
+            }
+
+            .content-icon {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        /* Animasi untuk deskripsi */
+        .description.show {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Jadwal Konten Jurnalistik</h1>
+            <p>Kalender Produksi Konten Sekolah 2025</p>
+        </div>
+
+        <div class="week-container">
+            <h2 class="week-title">
+                <i class="fas fa-calendar-week"></i>
+                Minggu 1
+            </h2>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div>
+                        <div class="date">Kamis, 23 Jan 2025</div>
+                        <div class="title">Mitos vs Fakta Pendidikan<span class="status-badge">Video</span></div>
+                    </div>
+                </div>
+                <div class="description">Video yang membahas dan meluruskan kesalahpahaman umum tentang pendidikan dan pembelajaran di sekolah. Misalnya mitos "siswa pintar selalu dapat nilai bagus" atau "belajar larut malam lebih efektif".</div>
+            </div>
+        </div>
+
+        <div class="week-container">
+            <h2 class="week-title">
+                <i class="fas fa-calendar-week"></i>
+                Minggu 2
+            </h2>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="date">Selasa, 28 Jan 2025</div>
+                        <div class="title">Tour Sekolah<span class="status-badge">Dokumenter</span></div>
+                    </div>
+                </div>
+                <div class="description">Video berkeliling sekolah untuk memperkenalkan fasilitas seperti perpustakaan, laboratorium, ruang kelas, kantin, dan area olahraga. Memberikan gambaran lengkap tentang lingkungan belajar di sekolah.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <div class="date">Rabu, 29 Jan 2025</div>
+                        <div class="title">Sukses dari Kegagalan<span class="status-badge">Inspirasi</span></div>
+                    </div>
+                </div>
+                <div class="description">Cerita inspiratif dari siswa atau guru yang pernah mengalami kegagalan tapi berhasil bangkit. Bisa berupa wawancara atau dokumenter pendek yang menunjukkan proses dan pembelajaran mereka.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <div class="date">Kamis, 30 Jan 2025</div>
+                        <div class="title">Life Hacks di Sekolah<span class="status-badge">Tips</span></div>
+                    </div>
+                </div>
+                <div class="description">Tips dan trik praktis untuk memudahkan kehidupan sekolah, seperti cara merapikan loker, mengorganisir buku, atau membuat catatan efektif.</div>
+                            </div>
+        </div>
+
+        <div class="week-container">
+            <h2 class="week-title">
+                <i class="fas fa-calendar-week"></i>
+                Minggu 3
+            </h2>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="date">Selasa, 4 feb 2025</div>
+                        <div class="title">sekolah dimata guru dan siswa<span class="status-badge">Dokumenter</span></div>
+                    </div>
+                </div>
+                <div class="description">Video wawancara yang menampilkan perspektif berbeda dari guru dan siswa tentang kehidupan sekolah, sistem pembelajaran, dan harapan mereka.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <div class="date">Rabu, 5 feb 2024</div>
+                        <div class="title">
+Rutinitas Pagi di Sekolah
+<span class="status-badge">Inspirasi</span></div>
+                    </div>
+                </div>
+                <div class="description">Dokumentasi suasana pagi di sekolah, mulai dari gerbang dibuka, siswa berdatangan, persiapan kelas, hingga bel pertama berbunyi.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <div class="date">Kamis, 6 feb 2025</div>
+                        <div class="title">Life Hacks di Sekolah<span class="status-badge">Tips</span></div>
+                    </div>
+                </div>
+                <div class="description">Liputan kegiatan peduli lingkungan di sekolah seperti program daur ulang, pembibitan tanaman, atau kampanye hemat energi.</div>
+                            </div>
+        </div>
+
+        <div class="week-container">
+            <h2 class="week-title">
+                <i class="fas fa-calendar-week"></i>
+                Minggu 4
+            </h2>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="date">Selasa, 11 feb 2025</div>
+                        <div class="title">Teacher's Tips<span class="status-badge">Dokumenter</span></div>
+                    </div>
+                </div>
+                <div class="description">Kumpulan tips belajar dari berbagai guru mata pelajaran, memberikan wawasan tentang cara terbaik memahami materi pelajaran mereka.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <div class="date">Rabu, 12 feb 2024</div>
+                        <div class="title">School Club Activities
+<span class="status-badge">Inspirasi</span></div>
+                    </div>
+                </div>
+                <div class="description">Video highlight kegiatan ekstrakurikuler, menampilkan berbagai klub seperti musik, olahraga, sains, atau seni, beserta prestasi mereka.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <div class="date">Kamis, 13 feb 2025</div>
+                        <div class="title">study tips<span class="status-badge">Tips</span></div>
+                    </div>
+                </div>
+                <div class="description">Tips dan strategi belajar efektif dari siswa-siswa berprestasi, berbagi pengalaman dan metode belajar yang mereka terapkan.</div>
+                            </div>
+        </div>
+
+        <div class="week-container">
+            <h2 class="week-title">
+                <i class="fas fa-calendar-week"></i>
+                  Minggu 5
+            </h2>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-building-columns"></i>
+                    </div>
+                    <div>
+                        <div class="date">Selasa, 18 feb 2025</div>
+                        <div class="Interview dengan guru favorit siswa<span class="status-badge">Dokumenter</span></div>
+                    </div>
+                </div>
+                <div class="description">Wawancara mendalam dengan guru-guru yang disukai siswa, membahas filosofi mengajar, pengalaman, dan hubungan mereka dengan murid-murid.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <div class="date">Rabu, 19 feb 2024</div>
+                        <div class="title">Vlog kegiatan kebersihan dan penghijauan sekolah
+<span class="status-badge">Inspirasi</span></div>
+                    </div>
+                </div>
+                <div class="description">Dokumentasi kegiatan bersih-bersih sekolah dan program penghijauan, menunjukkan kontribusi warga sekolah dalam menjaga lingkungan.</div>
+            </div>
+            <div class="content-item">
+                <div class="content-header">
+                    <div class="content-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <div class="date">Kamis, 20 feb 2025</div>
+                        <div class="title">Tips mengatur waktu antara belajar dan organisasi<span class="status-badge">Tips</span></div>
+                    </div>
+                </div>
+                <div class="description">Panduan praktis tentang manajemen waktu untuk siswa yang aktif berorganisasi, termasuk contoh jadwal dan strategi prioritas.</div
+            </div>
+        </div>
+
+        <!-- Minggu 3-5 mengikuti pola yang sama -->
+        <!-- Saya mempersingkat kode untuk kemudahan membaca, tapi struktur sama untuk semua minggu -->
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.content-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const description = item.querySelector('.description');
+                if (description.classList.contains('show')) {
+                    description.classList.remove('show');
+                } else {
+                    document.querySelectorAll('.description').forEach(desc => {
+                        desc.classList.remove('show');
+                    });
+                    description.classList.add('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
